@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Checkout Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="buys">
+        <div class="backbag">
+          <img src="./img/photo1.png" alt="Vintage Backbag" />
+          <div class="content">
+            <h4>Vintage Backbag</h4>
+            <p>$25.98 <span>$54.99</span></p>
+            <br />
+            <div class="count">
+              <button id="decr1">-</button>
+              <p id="counter1">0</p>
+              <button id="incr1">+</button>
+            </div>
+            <button id="remove">Remove</button>
+          </div>
+        </div>
+        <div class="shoes">
+          <img src="./img/photo2.png" alt="Levi Shoes" />
+          <div class="content">
+            <h4>Levi Shoes</h4>
+            <p>$45.99 <span>$54.99</span></p>
+            <br />
+            <div class="count">
+              <button id="decr2">-</button>
+              <p id="counter2">0</p>
+              <button id="incr2">+</button>
+            </div>
+            <button id="remove">Remove</button>
+          </div>
+        </div>
+        <div class="clocks">
+          <img src="./img/photo3.jpg" alt="Antique Clock" />
+          <div class="content">
+            <h4>Antique Clock</h4>
+            <p>$74.99 <span>$94.99</span></p>
+            <br />
+            <div class="count">
+              <button id="decr3">-</button>
+              <p id="counter3">0</p>
+              <button id="incr3">+</button>
+            </div>
+            <button id="remove">Remove</button>
+          </div>
+        </div>
+        <div class="price">
+          <hr />
+          <p>Subtotal <span id="sub-total">$00.00</span></p>
+          <hr />
+          <p>Tax(%18)<span id="tax-total">$00.00</span></p>
+          <hr />
+          <p>Shipping <span>$15.00</span></p>
+          <hr />
+          <p>Total <span id="totalResult">$15.00</span></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
