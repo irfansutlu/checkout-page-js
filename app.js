@@ -128,7 +128,7 @@ inc3.addEventListener("click", () => {
       15
     ).toFixed(2);
   item3();
-  removeItem()
+  
 });
 
 dec3.addEventListener("click", () => {
@@ -149,7 +149,7 @@ dec3.addEventListener("click", () => {
         15
       ).toFixed(2);
     item3();
-    removeItem()
+   
   }
 });
 
@@ -158,17 +158,60 @@ function item3() {
 }
 
 // remove button
+
 const removeBtn = document.querySelectorAll("#remove");
-
 for (let i = 0; i < removeBtn.length; i++) {
-    removeBtn[i].addEventListener("click",() => {
+  removeBtn[i].addEventListener(
+    "click",
+    () => {
+      if (
+        removeBtn[i].parentElement.parentElement.classList.contains("backbag")
+      ) {
+        subTotal.innerHTML = "$" + (sum2 * 45.99 + sum3 * 74.99).toFixed(2);
+        taxTotal.innerHTML =
+          "$" + (((sum2 * 45.99 + sum3 * 74.99) * 18) / 100).toFixed(2);
+        result.innerHTML =
+          "$" +
+          (
+            sum2 * 45.99 +
+            sum3 * 74.99 +
+            ((sum2 * 45.99 + sum3 * 74.99) * 18) / 100 +
+            15
+          ).toFixed(2);
+        sum1 = 0;
         removeBtn[i].parentElement.parentElement.remove();
-    },false);
-}
-
-
-function removeItem(){
-    if(removeBtn[i].parentElement.parentElement.remove()){
-        sum[i+1]=0;
-    }
+      } else if (
+        removeBtn[i].parentElement.parentElement.classList.contains("shoes")
+      ) {
+        subTotal.innerHTML = "$" + (sum1 * 25.98 + sum3 * 74.99).toFixed(2);
+        taxTotal.innerHTML =
+          "$" + (((sum1 * 25.98 + sum3 * 74.99) * 18) / 100).toFixed(2);
+        result.innerHTML =
+          "$" +
+          (
+            sum1 * 25.98 +
+            sum3 * 74.99 +
+            ((sum1 * 25.98 + sum3 * 74.99) * 18) / 100 +
+            15
+          ).toFixed(2);
+        sum2 = 0;
+        removeBtn[i].parentElement.parentElement.remove();
+      } else {
+        subTotal.innerHTML = "$" + (sum1 * 25.98 + sum2 * 45.99).toFixed(2);
+        taxTotal.innerHTML =
+          "$" + (((sum1 * 25.98 + sum2 * 45.99) * 18) / 100).toFixed(2);
+        result.innerHTML =
+          "$" +
+          (
+            sum1 * 25.98 +
+            sum2 * 45.99 +
+            ((sum1 * 25.98 + sum2 * 45.99) * 18) / 100 +
+            15
+          ).toFixed(2);
+        sum3 = 0;
+        removeBtn[i].parentElement.parentElement.remove();
+      }
+    },
+    false
+  );
 }
